@@ -1,0 +1,19 @@
+{
+  "name": "RILIFLIGHT",
+  "short_name": "RILIFLIGHT",
+  "description": "Recherche personnelle de vols vers l'Algérie",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#f2f5f9",
+  "theme_color": "#101b34",
+  "icons": [
+    {
+      "src": "./icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

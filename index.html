@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#101b34">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="RILIFLIGHT">
+<meta name="description" content="Comparateur personnel de vols Paris–Algérie. Recherche externe, suivi manuel et historique local.">
+<link rel="manifest" href="./manifest.webmanifest">
+<link rel="icon" href="./icon.svg" type="image/svg+xml">
+<title>RILIFLIGHT — Recherche de vols</title>
+<style>
+:root{--navy:#101b34;--navy2:#21385f;--ink:#172238;--muted:#647084;--bg:#f2f5f9;--card:#fff;--line:#dfe5ee;--teal:#087f73;--pale:#e6f7f3;--warn:#fff4d9;--warnink:#754b00;--shadow:0 6px 24px #14213d0c}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}button,input,select{font:inherit}button,a{touch-action:manipulation}button{cursor:pointer}.app{max-width:560px;margin:auto;min-height:100vh;padding-bottom:92px}.hero{background:linear-gradient(145deg,var(--navy),var(--navy2));color:#fff;padding:22px 18px 24px;border-radius:0 0 24px 24px}.brandrow{display:flex;align-items:center;gap:11px}.logo{width:43px;height:43px;border-radius:14px;background:#d7f8f0;color:#087d70;display:grid;place-items:center;font-size:23px;font-weight:900}.brand{font-size:21px;font-weight:850;letter-spacing:-.5px}.subbrand{font-size:11px;color:#c7d4e8;margin-top:3px}.version{margin-left:auto;font-size:10px;color:#e0e8f6;border:1px solid #526382;border-radius:99px;padding:6px 8px}.hero h1{font-size:27px;line-height:1.12;letter-spacing:-.8px;margin:24px 0 8px}.hero p{font-size:13px;line-height:1.5;color:#d5e0f0;margin:0}.main{padding:15px}.notice{background:var(--warn);color:var(--warnink);border:1px solid #f0d58e;border-radius:13px;padding:12px;font-size:12px;line-height:1.45;margin-bottom:14px}.notice b{display:block;margin-bottom:4px}.sectionhead{display:flex;align-items:center;justify-content:space-between;margin:21px 0 10px}.sectionhead h2{font-size:16px;margin:0}.muted{font-size:11px;color:var(--muted)}.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px;margin-bottom:12px;box-shadow:var(--shadow)}.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.field label{display:block;font-size:11px;color:var(--muted);font-weight:750;margin-bottom:6px}.field input,.field select{width:100%;padding:11px 9px;border:1px solid #d6deea;border-radius:10px;background:white;color:var(--ink);font-size:13px;min-width:0}.full{grid-column:1/-1}.btn{border:0;background:var(--teal);color:#fff;font-size:12px;font-weight:800;border-radius:11px;padding:12px 13px;text-decoration:none;display:inline-flex;justify-content:center;align-items:center;gap:6px}.btn.secondary{background:#edf1f7;color:#263854}.btn.dark{background:var(--navy)}.btn.small{padding:9px 10px;font-size:11px}.actions{display:flex;gap:8px;margin-top:12px}.actions>*{flex:1}.routes{display:grid;grid-template-columns:1fr 1fr;gap:9px}.route{background:white;border:1px solid var(--line);border-radius:13px;padding:12px}.route strong{display:block;font-size:13px}.route span{display:block;font-size:10px;color:var(--muted);margin:4px 0 10px}.route .btn{width:100%}.tabs{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:min(560px,100%);display:grid;grid-template-columns:repeat(4,1fr);background:#fff;border-top:1px solid var(--line);padding:8px 5px calc(8px + env(safe-area-inset-bottom));z-index:4}.tab{border:0;background:transparent;color:#818da1;font-size:10px;padding:4px;display:grid;gap:4px;justify-items:center}.tab span{font-size:18px}.tab.active{color:var(--teal);font-weight:850}.view{display:none}.view.active{display:block}.listitem{border-bottom:1px solid var(--line);padding:11px 0}.listitem:last-child{border:0}.itemtop{display:flex;justify-content:space-between;gap:8px}.itemtop strong{font-size:13px}.price{font-size:17px;font-weight:850;white-space:nowrap}.tag{font-size:10px;border-radius:6px;background:#eef2f7;color:#44536c;padding:4px 6px;display:inline-block;margin:5px 4px 0 0}.tag.green{background:var(--pale);color:var(--teal)}.empty{padding:22px 8px;text-align:center;color:var(--muted);font-size:12px;line-height:1.55}.small{font-size:11px;line-height:1.5;color:var(--muted)}.row{display:flex;justify-content:space-between;align-items:center;gap:10px}.row strong{font-size:12px}.checkrow{padding:11px 0;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:12px}.checkrow:last-child{border:0}.checkrow p{font-size:10px;color:var(--muted);margin:4px 0 0}.switch{width:40px;height:23px;accent-color:var(--teal)}.toast{display:none;position:fixed;bottom:84px;left:50%;transform:translateX(-50%);width:calc(100% - 32px);max-width:520px;padding:12px 14px;border-radius:12px;background:#14233e;color:white;font-size:12px;z-index:8}.toast.show{display:block}.footer{font-size:10px;color:var(--muted);line-height:1.5;padding:5px 2px 12px}
+@media(min-width:560px){body{padding:18px 0}.app{border-radius:25px;overflow:hidden;box-shadow:0 12px 45px #10204018}.tabs{bottom:18px;border-radius:0 0 25px 25px}}
+</style>
+</head>
+<body>
+<div class="app">
+<header class="hero">
+ <div class="brandrow"><div class="logo">R</div><div><div class="brand">RILIFLIGHT</div><div class="subbrand">Recherche claire · suivi sans pistage publicitaire</div></div><div class="version">BÊTA LOCALE</div></div>
+ <h1>Comparer les vols<br>vers l’Algérie.</h1>
+ <p>Ouvre des recherches datées, compare les 8 directions et conserve tes relevés de prix sur cet appareil.</p>
+</header>
+<main class="main">
+ <div class="notice"><b>Transparence sur les données</b>Cette version n’invente aucun tarif : elle ouvre des recherches externes et permet d’enregistrer manuellement les prix que tu vérifies. Aucun flux de tarifs aérien ni aucune alerte automatique quotidienne n’est connecté.</div>
+
+ <section id="search" class="view active">
+  <div class="sectionhead"><h2>Ta recherche</h2><span class="muted">1 adulte · bagage en soute</span></div>
+  <div class="card">
+   <div class="grid">
+    <div class="field"><label for="dep">DATE DE DÉPART</label><input id="dep" type="date" value="2026-12-21"></div>
+    <div class="field"><label for="ret">DATE DE RETOUR</label><input id="ret" type="date" value="2027-01-06"></div>
+    <div class="field"><label for="stay">DURÉE DU SÉJOUR</label><select id="stay"><option value="14">14 jours</option><option value="15">15 jours</option><option value="16" selected>16 jours</option><option value="17">17 jours</option><option value="18">18 jours</option><option value="19">19 jours</option><option value="20">20 jours</option><option value="21">21 jours</option></select></div>
+    <div class="field"><label for="budget">BUDGET A/R BAGAGE INCLUS</label><input id="budget" type="number" min="1" value="200"></div>
+    <div class="field"><label for="origin">AÉROPORT DE DÉPART</label><select id="origin"><option>CDG</option><option>ORY</option><option>ALG</option><option>BJA</option></select></div>
+    <div class="field"><label for="dest">AÉROPORT D’ARRIVÉE</label><select id="dest"><option>ALG</option><option>BJA</option><option>CDG</option><option>ORY</option></select></div>
+   </div>
+   <div class="actions"><button class="btn" id="openSearch">Rechercher sur Google Flights ↗</button><button class="btn secondary" id="saveSearch">Enregistrer la recherche</button></div>
+   <p class="small">Le site externe affiche ses propres résultats. Vérifie les dates, les frais, le bagage en soute et le vendeur avant de réserver.</p>
+  </div>
+  <div class="sectionhead"><h2>Les 8 itinéraires</h2><span class="muted">Recherche individuelle</span></div>
+  <div id="routeGrid" class="routes"></div>
+  <div class="sectionhead"><h2>Relevé manuel de prix</h2><span class="muted">Enregistré sur cet iPhone</span></div>
+  <div class="card">
+   <div class="grid">
+    <div class="field"><label for="logRoute">ITINÉRAIRE</label><select id="logRoute"></select></div>
+    <div class="field"><label for="logType">TYPE DE BILLET</label><select id="logType"><option value="A/R">Aller-retour</option><option value="Aller simple">Aller simple</option><option value="Billets séparés">Deux billets séparés</option></select></div>
+    <div class="field"><label for="logPrice">TOTAL OBSERVÉ (€)</label><input id="logPrice" type="number" min="0.01" step="0.01" placeholder="Ex. 187,50"></div>
+    <div class="field"><label for="bagStatus">BAGAGE EN SOUTE</label><select id="bagStatus"><option value="confirmé inclus">Confirmé inclus</option><option value="coût ajouté confirmé">Coût ajouté confirmé</option><option value="non confirmé">Non confirmé</option><option value="non inclus">Non inclus</option></select></div>
+    <div class="field full"><label for="logNote">SOURCE / REMARQUE (facultatif)</label><input id="logNote" type="text" maxlength="160" placeholder="Compagnie, vendeur, tarif du bagage…"></div>
+   </div>
+   <div class="actions"><button class="btn" id="addPrice">Enregistrer le relevé</button><button class="btn secondary" id="exportCsv">Exporter l’historique CSV</button></div>
+   <p class="small">Un relevé ne constitue pas une garantie de disponibilité. Les tarifs ne sont jamais importés automatiquement.</p>
+  </div>
+ </section>
+
+ <section id="history" class="view">
+  <div class="sectionhead"><h2>Historique local</h2><button class="btn secondary small" id="clearHistory">Effacer</button></div>
+  <div class="card"><div id="historyList" class="empty">Aucun prix enregistré. Ajoute un relevé depuis l’onglet Recherche.</div></div>
+  <p class="footer">Les données restent dans le stockage local du navigateur de cet appareil. Effacer les données du navigateur peut les supprimer. Export CSV conseillé pour garder une copie.</p>
+ </section>
+
+ <section id="alerts" class="view">
+  <div class="sectionhead"><h2>Objectifs & alertes</h2><span class="tag">Préférences locales</span></div>
+  <div class="notice"><b>Les alertes automatiques ne sont pas actives</b>Ces réglages enregistrent tes préférences sur cet appareil. Ils ne lancent pas de recherches en arrière-plan et n’envoient pas de notifications lorsque l’application est fermée.</div>
+  <div class="card">
+   <div class="field"><label for="alertBudget">SEUIL A/R (EUR)</label><input id="alertBudget" type="number" min="1" value="200"></div>
+   <div class="checkrow"><div><strong>Exiger un bagage confirmé</strong><p>Ne pas traiter un tarif inconnu comme conforme.</p></div><input class="switch" id="prefBag" type="checkbox" checked></div>
+   <div class="checkrow"><div><strong>Comparer les billets séparés</strong><p>Aller et retour peuvent provenir de vendeurs différents.</p></div><input class="switch" id="prefSplit" type="checkbox" checked></div>
+   <div class="checkrow"><div><strong>Rappeler la vérification quotidienne</strong><p>Préférence enregistrée uniquement ; aucun rappel système.</p></div><input class="switch" id="prefDaily" type="checkbox" checked></div>
+   <button class="btn dark" id="savePrefs" style="width:100%;margin-top:13px">Enregistrer les préférences</button>
+  </div>
+  <div class="card">
+   <div class="row"><strong>Flux de tarifs réels</strong><span class="tag">Non connecté</span></div>
+   <div class="row" style="margin-top:10px"><strong>Historique serveur synchronisé</strong><span class="tag">Non connecté</span></div>
+   <div class="row" style="margin-top:10px"><strong>Notifications en arrière-plan</strong><span class="tag">Non connecté</span></div>
+  </div>
+ </section>
+
+ <section id="install" class="view">
+  <div class="sectionhead"><h2>Installation iPhone</h2></div>
+  <div class="card">
+   <p style="font-size:13px;line-height:1.6;margin-top:0">Pour installer RILIFLIGHT comme une application, le site doit être publié sur une adresse HTTPS. Un fichier téléchargé ne peut pas s’ajouter automatiquement à l’écran d’accueil.</p>
+   <ol style="font-size:12px;line-height:1.8;padding-left:20px">
+    <li>Publier le dossier du site sur un hébergement HTTPS.</li>
+    <li>Ouvrir son adresse dans Safari sur l’iPhone.</li>
+    <li>Toucher <b>Partager</b>, puis <b>Sur l’écran d’accueil</b>.</li>
+    <li>Toucher <b>Ajouter</b>.</li>
+   </ol>
+   <p class="small">La PWA peut mettre en cache l’interface. Le cache hors ligne ne fournit pas de nouveaux prix de vols.</p>
+  </div>
+ </section>
+ <p class="footer">RILIFLIGHT · prototype personnel sans compte utilisateur ni suivi publicitaire intégré. Google Flights est un service externe soumis à ses propres conditions.</p>
+</main>
+<nav class="tabs">
+ <button class="tab active" data-view="search"><span>⌕</span>Recherche</button>
+ <button class="tab" data-view="history"><span>▤</span>Historique</button>
+ <button class="tab" data-view="alerts"><span>♧</span>Alertes</button>
+ <button class="tab" data-view="install"><span>＋</span>Installation</button>
+</nav>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+</div>
+<script>
+const ROUTES=[
+ ["CDG","ALG","Paris-CDG → Alger"],["ORY","ALG","Paris-Orly → Alger"],
+ ["CDG","BJA","Paris-CDG → Béjaïa"],["ORY","BJA","Paris-Orly → Béjaïa"],
+ ["ALG","CDG","Alger → Paris-CDG"],["ALG","ORY","Alger → Paris-Orly"],
+ ["BJA","CDG","Béjaïa → Paris-CDG"],["BJA","ORY","Béjaïa → Paris-Orly"]
+];
+const $=id=>document.getElementById(id);
+const read=(key,fallback)=>{try{const x=localStorage.getItem(key);return x===null?fallback:JSON.parse(x)}catch{return fallback}};
+const write=(key,value)=>{try{localStorage.setItem(key,JSON.stringify(value));return true}catch{return false}};
+let history=read("riliflight_history",[]);
+let prefs=read("riliflight_prefs",{budget:200,bag:true,split:true,daily:true});
+function toast(s){const el=$("toast");el.textContent=s;el.classList.add("show");setTimeout(()=>el.classList.remove("show"),3500)}
+function safeDate(d){return /^\d{4}-\d{2}-\d{2}$/.test(d||"")}
+function flightsUrl(origin,dest,dep,ret){
+ let q=`Flights from ${origin} to ${dest} on ${dep}`;
+ if(ret) q+=` returning ${ret}`;
+ q+=" checked baggage";
+ return "https://www.google.com/travel/flights?q="+encodeURIComponent(q);
+}
+function openSearch(o,d){
+ const dep=$("dep").value,ret=$("ret").value;
+ if(!safeDate(dep)){toast("Choisis une date de départ valide.");return}
+ if(ret && ret<dep){toast("La date de retour doit être postérieure au départ.");return}
+ if(o===d){toast("Choisis deux aéroports différents.");return}
+ window.open(flightsUrl(o,d,dep,ret)," _blank".trim(),"noopener,noreferrer");
+}
+function renderRoutes(){
+ $("routeGrid").innerHTML=ROUTES.map(([o,d,label])=>`<div class="route"><strong>${o} → ${d}</strong><span>${label}</span><button class="btn small route-search" data-o="${o}" data-d="${d}">Chercher ↗</button></div>`).join("");
+ document.querySelectorAll(".route-search").forEach(b=>b.addEventListener("click",()=>openSearch(b.dataset.o,b.dataset.d)));
+ $("logRoute").innerHTML=ROUTES.map(([o,d,label])=>`<option value="${o}→${d}">${o} → ${d} — ${label}</option>`).join("");
+}
+function renderHistory(){
+ const el=$("historyList");
+ if(!history.length){el.className="empty";el.textContent="Aucun prix enregistré. Ajoute un relevé depuis l’onglet Recherche.";return}
+ el.className="";
+ el.innerHTML=[...history].reverse().map((h,i)=>`<div class="listitem"><div class="itemtop"><strong>${h.route} · ${h.type}</strong><span class="price">${Number(h.price).toLocaleString("fr-FR",{style:"currency",currency:"EUR"})}</span></div><div><span class="tag ${h.bag==="confirmé inclus"||h.bag==="coût ajouté confirmé"?"green":""}">Bagage : ${h.bag}</span><span class="tag">${h.date}</span></div><div class="small">${escapeHtml(h.note||"Sans remarque")} · Relevé le ${new Date(h.created).toLocaleString("fr-FR")}</div></div>`).join("");
+}
+function escapeHtml(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+function addPrice(){
+ const price=Number($("logPrice").value);
+ if(!Number.isFinite(price)||price<=0){toast("Saisis un prix valide en euros.");return}
+ const h={route:$("logRoute").value,type:$("logType").value,price,bag:$("bagStatus").value,note:$("logNote").value.trim(),date:$("dep").value,created:new Date().toISOString()};
+ history.push(h);
+ if(!write("riliflight_history",history)){history.pop();toast("Stockage indisponible. Exporte ou vérifie les réglages du navigateur.");return}
+ $("logPrice").value="";$("logNote").value="";renderHistory();toast("Relevé enregistré sur cet appareil.");
+}
+function exportCsv(){
+ if(!history.length){toast("Aucun relevé à exporter.");return}
+ const rows=[["date_recherche","route","type","prix_eur","statut_bagage","source_remarque","horodatage"],...history.map(h=>[h.date,h.route,h.type,h.price,h.bag,h.note,h.created])];
+ const csv=rows.map(r=>r.map(v=>'"'+String(v??"").replace(/"/g,'""')+'"').join(";")).join("\r\n");
+ const blob=new Blob(["\ufeff"+csv],{type:"text/csv;charset=utf-8;"});
+ const url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download="riliflight-historique.csv";a.click();URL.revokeObjectURL(url);toast("Export CSV lancé.");
+}
+function showView(id){
+ document.querySelectorAll(".view").forEach(v=>v.classList.toggle("active",v.id===id));
+ document.querySelectorAll(".tab").forEach(b=>b.classList.toggle("active",b.dataset.view===id));
+ window.scrollTo({top:0,behavior:"smooth"});
+}
+document.querySelectorAll(".tab").forEach(b=>b.addEventListener("click",()=>showView(b.dataset.view)));
+$("openSearch").addEventListener("click",()=>openSearch($("origin").value,$("dest").value));
+$("saveSearch").addEventListener("click",()=>{
+ const d=$("dep").value,r=$("ret").value;
+ if(!safeDate(d)||(r&&!safeDate(r))||(r&&r<d)){toast("Vérifie les dates avant d’enregistrer.");return}
+ const saved=read("riliflight_searches",[]);
+ saved.push({origin:$("origin").value,destination:$("dest").value,departure:d,return:r,budget:Number($("budget").value||200),savedAt:new Date().toISOString()});
+ write("riliflight_searches",saved);toast("Recherche enregistrée sur cet appareil.");
+});
+$("dep").addEventListener("change",()=>{const n=Number($("stay").value||16);if($("dep").value){const d=new Date($("dep").value+"T12:00:00");d.setDate(d.getDate()+n);$("ret").value=d.toISOString().slice(0,10)}});
+$("stay").addEventListener("change",()=>{if($("dep").value){const d=new Date($("dep").value+"T12:00:00");d.setDate(d.getDate()+Number($("stay").value));$("ret").value=d.toISOString().slice(0,10)}});
+$("addPrice").addEventListener("click",addPrice);
+$("exportCsv").addEventListener("click",exportCsv);
+$("clearHistory").addEventListener("click",()=>{if(confirm("Effacer tous les relevés enregistrés sur cet appareil ?")){history=[];write("riliflight_history",history);renderHistory();toast("Historique effacé.")}});
+$("savePrefs").addEventListener("click",()=>{prefs={budget:Number($("alertBudget").value||200),bag:$("prefBag").checked,split:$("prefSplit").checked,daily:$("prefDaily").checked};write("riliflight_prefs",prefs);toast("Préférences enregistrées localement. Aucune alerte distante n’est activée.")});
+$("alertBudget").value=prefs.budget;$("prefBag").checked=prefs.bag;$("prefSplit").checked=prefs.split;$("prefDaily").checked=prefs.daily;
+renderRoutes();renderHistory();
+if("serviceWorker" in navigator && (location.protocol==="https:"||location.hostname==="localhost")) addEventListener("load",()=>navigator.serviceWorker.register("./sw.js").catch(()=>{}));
+</script>
+</body>
+</html>

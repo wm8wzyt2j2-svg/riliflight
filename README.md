@@ -1,24 +1,29 @@
-# RILIFLIGHT — PWA statique, sans dépendances
+# RILIFLIGHT — version professionnelle statique
 
-## Fonctions réellement opérationnelles
-- Interface responsive adaptée à Safari/iPhone.
-- Recherche externe datée pour les 8 directions CDG/ORY ↔ ALG/BJA.
-- Sélection du départ, du retour, du séjour (14 à 21 jours) et du budget.
-- Historique manuel local avec export CSV.
-- Préférences locales pour les règles d'alerte.
-- Manifest PWA, icône et service worker de cache.
-- Aucun suivi analytique ou publicitaire intégré; aucun prix fictif affiché.
+## Ce que cette version fait réellement
+- Interface responsive pour iPhone et ordinateur.
+- Recherche aller-retour, aller simple et retour simple via un moteur externe.
+- Paramètres de départ, destination, dates, voyageurs, budget cible et bagage à vérifier.
+- Enregistrement local des recherches.
+- Historique manuel des prix observés, statut du bagage, source et notes.
+- Export CSV de l'historique.
+- Comparaison arithmétique d'un aller-retour avec deux billets simples.
+- PWA de base avec manifeste et cache hors ligne.
 
-## Limites fonctionnelles explicites
-- Aucun flux de tarifs aérien n'est connecté. Les recherches ouvrent Google Flights; l'app ne lit pas ses résultats.
-- Aucun tarif réel n'est agrégé automatiquement.
-- Aucune surveillance quotidienne en arrière-plan ni notification iOS n'est active.
-- Les relevés sont stockés dans le navigateur de l'appareil; ils ne sont pas synchronisés.
-- Les liens externes peuvent changer et doivent être vérifiés avant réservation.
+## Ce qu'elle ne fait pas
+- Aucun accès à un flux de tarifs aériens.
+- Aucun prix inventé ou affiché comme s'il était en direct.
+- Aucune surveillance automatique des tarifs.
+- Aucune notification en arrière-plan.
+- Aucune réservation ni paiement.
+- Les données sont stockées dans le navigateur local et ne se synchronisent pas entre appareils.
 
-## Publication gratuite
-Déployer le contenu de ce dossier (index.html à la racine) sur un hébergement statique HTTPS, par exemple Cloudflare Pages ou GitHub Pages. Après publication, ouvrir l'URL dans Safari sur iPhone > Partager > Sur l'écran d'accueil > Ajouter.
-Le service worker et l'installation PWA exigent HTTPS (sauf localhost).
+## Déploiement GitHub Pages
+1. Téléverser tous les fichiers à la racine du dépôt.
+2. Paramètres → Pages.
+3. Source : déployer à partir d'une branche.
+4. Branche `main`, dossier `/(root)`, puis enregistrer.
+5. Ouvrir l'adresse Pages indiquée par GitHub.
 
-## Confidentialité
-Les paramètres et relevés restent dans localStorage. Ils peuvent être effacés par l'utilisateur ou lors de la suppression des données du navigateur. Exporter le CSV pour conserver une copie.
+## Pour de vrais tarifs et alertes
+Il faut intégrer une API de recherche aérienne dont les conditions autorisent cet usage, gérer les clés API côté serveur, créer un backend et planifier les vérifications. Ne placez jamais une clé secrète dans `index.html`.

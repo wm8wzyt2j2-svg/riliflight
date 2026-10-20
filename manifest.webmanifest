@@ -1,16 +1,15 @@
 {
-  "name": "RILIFLIGHT",
+  "name": "RILIFLIGHT — Vols vers l’Algérie",
   "short_name": "RILIFLIGHT",
-  "description": "Recherche personnelle de vols vers l'Algérie",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
-  "orientation": "portrait",
-  "background_color": "#f2f5f9",
-  "theme_color": "#101b34",
+  "background_color": "#0b1120",
+  "theme_color": "#101827",
+  "description": "Recherche de vols, suivi manuel et comparaison de prix sans tarifs fictifs.",
   "icons": [
     {
-      "src": "./icon.svg",
+      "src": "icon.svg",
       "sizes": "any",
       "type": "image/svg+xml",
       "purpose": "any maskable"
